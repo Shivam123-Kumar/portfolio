@@ -59,3 +59,14 @@
 .cert-btn:hover {
   background-color: #446e59;
 }
+
+
+@media (max-width: 768px) {
+  .cert-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cert-card {
+    padding: 1.2rem;
+  }
+}

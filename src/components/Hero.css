@@ -130,3 +130,23 @@
     height: 130px;
   }
 }
+
+
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.3rem;
+  }
+
+  .hero-content h2 {
+    font-size: 1.2rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .hero-image img {
+    width: 130px;
+    height: 130px;
+  }
+}

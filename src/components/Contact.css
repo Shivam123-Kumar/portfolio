@@ -127,3 +127,15 @@
     text-align: center;
   }
 }
+
+
+@media (max-width: 768px) {
+  .contact-form {
+    padding: 1.5rem;
+  }
+
+  input,
+  textarea {
+    font-size: 0.95rem;
+  }
+}

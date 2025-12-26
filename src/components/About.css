@@ -81,3 +81,15 @@
     text-align: center;
   }
 }
+
+
+@media (max-width: 768px) {
+  .about {
+    padding: 3rem 1.5rem;
+  }
+
+  .about p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+}

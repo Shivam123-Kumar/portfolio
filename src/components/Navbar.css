@@ -99,3 +99,22 @@
 .theme-toggle:hover {
   transform: scale(1.1);
 }
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.8rem 1rem;
+  }
+
+  .nav-links {
+    display: none; /* hide links on small screens */
+  }
+
+  /* Optional: show only name + theme toggle */
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  .theme-toggle {
+    font-size: 1.2rem;
+  }
+}

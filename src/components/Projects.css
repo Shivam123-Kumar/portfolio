@@ -103,3 +103,18 @@
     height: 200px;
   }
 }
+
+
+@media (max-width: 900px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card {
+    flex-direction: column;
+  }
+
+  .project-image {
+    height: 200px;
+  }
+}

@@ -32,3 +32,18 @@
 .dark li {
   color: #e5e7eb !important;
 }
+
+
+/* Global mobile fixes */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden; /* prevent horizontal scroll */
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}

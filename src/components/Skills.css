@@ -76,3 +76,15 @@
     height: 48px;
   }
 }
+
+
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .skill-card p {
+    font-size: 0.85rem;
+  }
+}
