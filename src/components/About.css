@@ -1,0 +1,83 @@
+/* Color variables (same palette) */
+:root {
+  --mint-light: #98fbcb;
+  --mint-bg: #bfffed;
+  --mint-accent: #7fcfa8;
+  --mint-dark: #558b71;
+  --text-dark: #1f2937;
+  --text-muted: #374151;
+}
+
+/* About Section */
+.about {
+  padding: 4rem 2rem;
+  background-color: white;
+}
+
+/* Container */
+.about-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Heading */
+.about-container h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--mint-dark);
+  margin-bottom: 1.2rem;
+}
+
+/* Intro Paragraph */
+.about-intro {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+  max-width: 750px;
+  margin: 0 auto 3rem;
+}
+
+/* Grid */
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+/* Cards */
+.about-card {
+  background-color: var(--mint-bg);
+  padding: 1.8rem 1.5rem;
+  border-radius: 14px;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-card h3 {
+  color: var(--mint-dark);
+  margin-bottom: 0.6rem;
+  font-size: 1.1rem;
+}
+
+.about-card p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.about-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-card {
+    text-align: center;
+  }
+}

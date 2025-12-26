@@ -1,0 +1,34 @@
+/* Light mode */
+.light {
+  background-color: #ffffff;
+  color: #1f2937;
+}
+
+/* Dark mode */
+.dark {
+  background-color: #0f172a;
+  color: #e5e7eb;
+}
+
+/* Section inheritance */
+.dark section {
+  background-color: #0f172a !important;
+}
+
+/* Cards */
+.dark .project-card,
+.dark .cert-card,
+.dark .experience-card,
+.dark .skill-card {
+  background-color: #1e293b !important;
+}
+
+/* Text adjustments */
+.dark h1,
+.dark h2,
+.dark h3,
+.dark p,
+.dark span,
+.dark li {
+  color: #e5e7eb !important;
+}

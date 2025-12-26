@@ -1,0 +1,101 @@
+/* Import cursive font */
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+
+/* Color Variables */
+:root {
+  --mint-light: #98fbcb;
+  --mint-bg: #bfffed;
+  --mint-accent: #7fcfa8;
+  --mint-dark: #558b71;
+  --text-dark: #1f2937;
+  --text-light: #f9fafb;
+}
+
+/* Navbar Base */
+.navbar {
+  width: 100%;
+  padding: 1rem 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: background 0.3s ease;
+}
+
+/* Light & Dark Modes */
+.navbar.light {
+  background-color: var(--mint-bg);
+  color: var(--text-dark);
+}
+
+.navbar.dark {
+  background-color: var(--mint-dark);
+  color: var(--text-light);
+}
+
+/* Logo */
+.logo {
+  font-family: "Pacifico", cursive;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: inherit;
+}
+
+/* Right Section */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* Nav Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-item a {
+  text-decoration: none;
+  color: inherit;
+  font-size: 0.95rem;
+  padding: 0.25rem 0;
+  transition: color 0.3s ease;
+}
+
+/* Hover underline animation */
+.nav-item::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background-color: var(--mint-accent);
+  transition: width 0.3s ease;
+}
+
+.nav-item:hover::after,
+.nav-item.active::after {
+  width: 100%;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  border: none;
+  background: transparent;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: inherit;
+  transition: transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+}

@@ -1,0 +1,64 @@
+/* Color variables */
+:root {
+  --mint-light: #98fbcb;
+  --mint-bg: #bfffed;
+  --mint-accent: #7fcfa8;
+  --mint-dark: #558b71;
+  --text-dark: #1f2937;
+  --text-light: #f9fafb;
+}
+
+/* Footer */
+.footer {
+  background-color: var(--mint-dark);
+  color: var(--text-light);
+  padding: 2.5rem 1.5rem;
+}
+
+/* Container */
+.footer-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Name */
+.footer-container h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.6rem;
+  font-weight: 700;
+}
+
+/* Text */
+.footer-container p {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  margin-bottom: 1.2rem;
+}
+
+/* Links */
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.6rem;
+}
+
+.footer-links a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: opacity 0.3s ease;
+}
+
+.footer-links a:hover {
+  opacity: 0.75;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .footer-links {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+}
