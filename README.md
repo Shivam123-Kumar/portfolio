@@ -15,4 +15,4 @@ This is my personal portfolio built using React and Vite.
 - Certifications & achievements
 
 ## Live Demo
-(Will be added soon)
+Vercel Link: https://portfolio-kappa-livid-3aww2gkhmx.vercel.app/
