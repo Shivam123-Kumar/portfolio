@@ -1,4 +1,6 @@
 // Project Images
+import ticTacToe from "../assets/projects/tic-tac-toe.png";
+import graphLlm from "../assets/projects/graph-llm.png";
 import wheelchair from "../assets/projects/eyeball-wheelchair.jpg";
 import food from "../assets/projects/food-delivery.jpg";
 import fakeNews from "../assets/projects/fake-news.jpg";
@@ -6,6 +8,20 @@ import battery from "../assets/projects/battery-lstm.jpg";
 import movie from "../assets/projects/movie-recommendation.jpg";
 
 const projects = [
+  {
+    title: "Tic-Tac-Toe Game",
+    image: ticTacToe,
+    tech: "React, Vite, Node.js, Express.js, Socket.io",
+    description:
+      "A full-stack real-time Tic-Tac-Toe game featuring online multiplayer via WebSockets, an unbeatable Minimax AI, and local pass-and-play. Built with a Vite + React frontend and Node.js + Express backend.",
+  },
+  {
+    title: "Graph LLM Order-to-Cash Intelligence",
+    image: graphLlm,
+    tech: "Streamlit, Neo4j, OpenAI API, Pandas, Pyvis",
+    description:
+      "An advanced intelligence system combining Large Language Models with a Neo4j graph database. Enables natural language querying to instantly generate insights and interactive 3D-style maps of connected business data.",
+  },
   {
     title: "Eyeball Controlled Wheelchair",
     image: wheelchair,

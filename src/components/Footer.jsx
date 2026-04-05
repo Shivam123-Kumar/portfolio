@@ -6,28 +6,26 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-container">
-        <h3>Shivam Kumar</h3>
+        <h3 className="footer-logo">Shivam Kumar</h3>
 
-        <p>© {year} Shivam Kumar. All rights reserved.</p>
+        <p className="footer-copyright">© {year} Shivam Kumar. All rights reserved.</p>
 
         <div className="footer-links">
           <a
-            href="https://github.com/your-github"
+            href="https://github.com/Shivam123-Kumar"
             target="_blank"
             rel="noopener noreferrer"
           >
             GitHub
           </a>
-
           <a
-            href="https://www.linkedin.com/in/your-linkedin"
+            href="https://www.linkedin.com/in/shivam-kumar-3640172a7/"
             target="_blank"
             rel="noopener noreferrer"
           >
             LinkedIn
           </a>
-
-          <a href="mailto:shivamkumar@example.com">Email</a>
+          <a href="mailto:shivamkumardlnn@gmail.com">Email</a>
         </div>
       </div>
     </footer>

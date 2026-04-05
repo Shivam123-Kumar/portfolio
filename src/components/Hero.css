@@ -1,152 +1,139 @@
-/* Color variables (same palette as Navbar) */
-:root {
-  --mint-light: #98fbcb;
-  --mint-bg: #bfffed;
-  --mint-accent: #7fcfa8;
-  --mint-dark: #558b71;
-  --text-dark: #1f2937;
-  --text-light: #f9fafb;
-}
-
-/* Hero Section */
 .hero {
-  min-height: 100vh; /* FULL FIRST PAGE */
+  min-height: calc(100vh - 70px);
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 3rem 2rem;
-  background: linear-gradient(
-    135deg,
-    var(--mint-bg),
-    var(--mint-light)
-  );
+  background: var(--bg-main);
+  background-image: radial-gradient(circle at 10% 20%, rgba(79, 70, 229, 0.05) 0%, transparent 40%),
+                    radial-gradient(circle at 90% 80%, rgba(79, 70, 229, 0.05) 0%, transparent 40%);
 }
 
-/* Content */
 .hero-content {
   max-width: 800px;
   text-align: center;
+  animation: fadeIn 0.8s ease-out;
 }
 
-/* Profile Image */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 .hero-image {
   display: flex;
   justify-content: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .hero-image img {
-  width: 160px;
-  height: 160px;
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
   object-fit: cover;
-  border: 4px solid var(--mint-dark);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  border: 4px solid var(--card-bg);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
 }
 
-/* Heading */
+.hero-image img:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-hover);
+}
+
 .hero-content h1 {
-  font-size: 3rem;
-  font-weight: 700;
-  color: var(--text-dark);
+  font-size: 3.8rem;
+  letter-spacing: -1px;
 }
 
 .hero-content h1 span {
-  color: var(--mint-dark);
+  color: var(--primary);
 }
 
-/* Subheading */
 .hero-content h2 {
-  margin-top: 0.75rem;
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: var(--mint-dark);
+  margin-top: 1rem;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: var(--text-muted);
 }
 
-/* Description */
 .hero-content p {
-  margin-top: 1.2rem;
-  font-size: 1.05rem;
-  line-height: 1.7;
-  color: #374151;
+  margin-top: 1.5rem;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* Buttons */
 .hero-buttons {
-  margin-top: 2rem;
+  margin-top: 2.5rem;
   display: flex;
   justify-content: center;
-  gap: 1.2rem;
+  gap: 1.5rem;
 }
 
 .btn {
-  padding: 0.7rem 1.6rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 2.2rem;
   border-radius: 30px;
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   text-decoration: none;
   font-weight: 600;
-  transition: all 0.3s ease;
+  transition: var(--transition);
+  cursor: pointer;
 }
 
-/* Primary Button */
-.btn.primary {
-  background-color: var(--mint-dark);
-  color: white;
+.btn-primary {
+  background-color: var(--primary);
+  color: #ffffff !important;
+  border: 2px solid var(--primary);
+  box-shadow: 0 4px 14px 0 rgba(79, 70, 229, 0.39);
 }
 
-.btn.primary:hover {
-  background-color: #44725e;
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  border-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(79, 70, 229, 0.4);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--text-main) !important;
+  border: 2px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+  border-color: var(--text-main);
+  background-color: var(--card-bg);
   transform: translateY(-2px);
 }
 
-/* Secondary Button */
-.btn.secondary {
-  border: 2px solid var(--mint-dark);
-  color: var(--mint-dark);
-}
-
-.btn.secondary:hover {
-  background-color: var(--mint-dark);
-  color: white;
-  transform: translateY(-2px);
-}
-
-/* Responsive */
 @media (max-width: 768px) {
+  .hero {
+    min-height: 85vh;
+  }
   .hero-content h1 {
-    font-size: 2.3rem;
+    font-size: 2.5rem;
   }
-
   .hero-content h2 {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
-
+  .hero-content p {
+    font-size: 1rem;
+  }
+  .hero-image img {
+    width: 140px;
+    height: 140px;
+  }
   .hero-buttons {
     flex-direction: column;
+    gap: 1rem;
   }
-
-  .hero-image img {
-    width: 130px;
-    height: 130px;
-  }
-}
-
-
-@media (max-width: 768px) {
-  .hero-content h1 {
-    font-size: 2.3rem;
-  }
-
-  .hero-content h2 {
-    font-size: 1.2rem;
-  }
-
-  .hero-buttons {
-    flex-direction: column;
-  }
-
-  .hero-image img {
-    width: 130px;
-    height: 130px;
+  .btn {
+    width: 100%;
   }
 }

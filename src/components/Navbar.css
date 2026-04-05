@@ -1,60 +1,52 @@
-/* Import cursive font */
-@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
-
-/* Color Variables */
-:root {
-  --mint-light: #98fbcb;
-  --mint-bg: #bfffed;
-  --mint-accent: #7fcfa8;
-  --mint-dark: #558b71;
-  --text-dark: #1f2937;
-  --text-light: #f9fafb;
-}
-
 /* Navbar Base */
 .navbar {
   width: 100%;
-  padding: 1rem 2.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   position: sticky;
   top: 0;
   z-index: 1000;
-  transition: background 0.3s ease;
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--glass-border);
+  transition: var(--transition);
 }
 
-/* Light & Dark Modes */
-.navbar.light {
-  background-color: var(--mint-bg);
-  color: var(--text-dark);
-}
-
-.navbar.dark {
-  background-color: var(--mint-dark);
-  color: var(--text-light);
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /* Logo */
 .logo {
-  font-family: "Pacifico", cursive;
-  font-size: 1.8rem;
+  font-family: var(--font-main);
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: -0.5px;
   cursor: pointer;
-  color: inherit;
+  color: var(--text-main);
 }
 
-/* Right Section */
+.logo::after {
+  content: '.';
+  color: var(--primary);
+}
+
+/* Desktop Menu */
 .navbar-right {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 2rem;
 }
 
-/* Nav Links */
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 1.5rem;
+  align-items: center;
+  gap: 1.8rem;
 }
 
 .nav-item {
@@ -63,58 +55,115 @@
 
 .nav-item a {
   text-decoration: none;
-  color: inherit;
+  color: var(--text-muted);
   font-size: 0.95rem;
+  font-weight: 500;
   padding: 0.25rem 0;
   transition: color 0.3s ease;
 }
 
-/* Hover underline animation */
-.nav-item::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  width: 0%;
-  height: 2px;
-  background-color: var(--mint-accent);
-  transition: width 0.3s ease;
+.nav-item a:hover {
+  color: var(--primary);
 }
 
-.nav-item:hover::after,
-.nav-item.active::after {
-  width: 100%;
+.resume-btn {
+  background-color: var(--primary);
+  color: #ffffff !important;
+  padding: 0.5rem 1.2rem !important;
+  border-radius: var(--radius);
+  font-weight: 600 !important;
+  transition: background 0.3s ease;
+}
+
+.resume-btn:hover {
+  background-color: var(--primary-hover);
 }
 
 /* Theme Toggle Button */
 .theme-toggle {
   border: none;
   background: transparent;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   cursor: pointer;
-  color: inherit;
   transition: transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .theme-toggle:hover {
-  transform: scale(1.1);
+  transform: scale(1.1) rotate(5deg);
 }
 
-@media (max-width: 768px) {
-  .navbar {
-    padding: 0.8rem 1rem;
+/* Mobile Controls */
+.mobile-controls {
+  display: none;
+  align-items: center;
+  gap: 1rem;
+}
+
+.hamburger {
+  background: transparent;
+  border: none;
+  font-size: 1.8rem;
+  color: var(--text-main);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+/* Mobile Drawer */
+.mobile-menu {
+  display: none;
+}
+
+/* Responsiveness */
+@media (max-width: 900px) {
+  .desktop-menu {
+    display: none;
   }
 
-  .nav-links {
-    display: none; /* hide links on small screens */
+  .mobile-controls {
+    display: flex;
   }
 
-  /* Optional: show only name + theme toggle */
-  .logo {
-    font-size: 1.2rem;
+  .mobile-menu {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-main);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: var(--shadow);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
   }
 
-  .theme-toggle {
-    font-size: 1.2rem;
+  .mobile-menu.open {
+    max-height: 400px;
+  }
+
+  .mobile-nav-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 2rem;
+    gap: 1rem;
+  }
+
+  .mobile-nav-links a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-size: 1.1rem;
+    font-weight: 500;
+    display: block;
+    padding: 0.5rem 0;
+  }
+
+  .mobile-resume-btn {
+    color: var(--primary) !important;
+    font-weight: 600 !important;
   }
 }

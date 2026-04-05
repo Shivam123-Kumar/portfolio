@@ -1,10 +1,11 @@
 import "./Contact.css";
 import React from "react";
+
 const Contact = () => {
   return (
     <section className="contact" id="contact">
       <div className="contact-container">
-        <h2>Contact</h2>
+        <h2 className="section-title">Contact</h2>
 
         <p className="contact-intro">
           I’m open to software development opportunities, internships, and
@@ -14,7 +15,7 @@ const Contact = () => {
 
         <div className="contact-grid">
           {/* Contact Info */}
-          <div className="contact-info">
+          <div className="contact-info card-base">
             <h3>Get in Touch</h3>
             <p>
               <strong>Email:</strong>{" "}
@@ -45,11 +46,17 @@ const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <form className="contact-form">
-            <input type="text" placeholder="Your Name" required />
-            <input type="email" placeholder="Your Email" required />
-            <textarea placeholder="Your Message" rows="5" required></textarea>
-            <button type="submit">Send Message</button>
+          <form className="contact-form card-base">
+            <div className="form-group">
+              <input type="text" placeholder="Your Name" required className="form-control" />
+            </div>
+            <div className="form-group">
+              <input type="email" placeholder="Your Email" required className="form-control" />
+            </div>
+            <div className="form-group">
+              <textarea placeholder="Your Message" rows="5" required className="form-control"></textarea>
+            </div>
+            <button type="submit" className="btn btn-primary form-btn">Send Message</button>
           </form>
         </div>
       </div>

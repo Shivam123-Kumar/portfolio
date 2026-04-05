@@ -1,5 +1,4 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import "./Navbar.css";
 
 const navItems = [
@@ -8,29 +7,24 @@ const navItems = [
   "Projects",
   "Skills",
   "Certification",
-  "Resume",
   "Contact",
 ];
 
 const Navbar = ({ darkMode, setDarkMode }) => {
   const [active, setActive] = useState("");
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className={`navbar ${darkMode ? "dark" : "light"}`}>
-      <div className="navbar-left">
-        <span className="logo">Shivam Kumar</span>
-      </div>
+    <nav className="navbar">
+      <div className="navbar-container">
+        <div className="navbar-left">
+          <span className="logo">Shivam Kumar.</span>
+        </div>
 
-      <div className="navbar-right">
-        <ul className="nav-links">
-          {navItems.map((item) =>
-            item === "Resume" ? (
-              <li key={item} className="nav-item">
-                <a href="/Shivam_Kumar_Resume.pdf" download>
-                  Resume
-                </a>
-              </li>
-            ) : (
+        {/* Desktop Menu */}
+        <div className="navbar-right desktop-menu">
+          <ul className="nav-links">
+            {navItems.map((item) => (
               <li
                 key={item}
                 className={`nav-item ${active === item ? "active" : ""}`}
@@ -39,16 +33,67 @@ const Navbar = ({ darkMode, setDarkMode }) => {
               >
                 <a href={`#${item.toLowerCase()}`}>{item}</a>
               </li>
-            )
-          )}
-        </ul>
+            ))}
+            <li className="nav-item">
+              <a href="/Shivam_Kumar_Resume.pdf" className="resume-btn" download>
+                Resume
+              </a>
+            </li>
+          </ul>
 
-        <button
-          className="theme-toggle"
-          onClick={() => setDarkMode(!darkMode)}
-        >
-          {darkMode ? "☀️" : "🌙"}
-        </button>
+          <button
+            className="theme-toggle"
+            onClick={() => setDarkMode(!darkMode)}
+            aria-label="Toggle Dark Mode"
+          >
+            {darkMode ? "☀️" : "🌙"}
+          </button>
+        </div>
+
+        {/* Mobile Menu Button */}
+        <div className="mobile-controls">
+          <button
+            className="theme-toggle mobile-theme"
+            onClick={() => setDarkMode(!darkMode)}
+            aria-label="Toggle Dark Mode"
+          >
+            {darkMode ? "☀️" : "🌙"}
+          </button>
+          
+          <button
+            className="hamburger"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle Menu"
+          >
+            {isOpen ? "✕" : "☰"}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Drawer */}
+      <div className={`mobile-menu ${isOpen ? "open" : ""}`}>
+        <ul className="mobile-nav-links">
+          {navItems.map((item) => (
+            <li key={item}>
+              <a 
+                href={`#${item.toLowerCase()}`} 
+                onClick={() => setIsOpen(false)}
+              >
+                {item}
+              </a>
+            </li>
+          ))}
+          <li>
+            <a 
+              href="/Shivam_Kumar_Resume.pdf" 
+              className="mobile-resume-btn" 
+              download 
+              onClick={() => setIsOpen(false)}
+            >
+              Resume
+            </a>
+          </li>
+        </ul>
       </div>
     </nav>
   );

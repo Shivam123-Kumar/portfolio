@@ -1,49 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Common Palette */
+  --primary: #4f46e5;       /* Indigo 600 */
+  --primary-hover: #4338ca; /* Indigo 700 */
+  --font-main: 'Inter', sans-serif;
+  --transition: all 0.3s ease;
+  --radius: 12px;
+  --shadow: 0 10px 25px rgba(0,0,0,0.05);
+  --shadow-hover: 0 15px 35px rgba(0,0,0,0.1);
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.2);
+}
+
+/* Global Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-main);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
 /* Light mode */
 .light {
-  background-color: #ffffff;
-  color: #1f2937;
+  --bg-main: #f8fafc;       /* Slate 50 */
+  --bg-secondary: #ffffff;  /* White */
+  --text-main: #0f172a;     /* Slate 900 */
+  --text-muted: #64748b;    /* Slate 500 */
+  --border-color: #e2e8f0;  /* Slate 200 */
+  --card-bg: #ffffff;
+  
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  min-height: 100vh;
 }
 
 /* Dark mode */
 .dark {
-  background-color: #0f172a;
-  color: #e5e7eb;
-}
-
-/* Section inheritance */
-.dark section {
-  background-color: #0f172a !important;
-}
-
-/* Cards */
-.dark .project-card,
-.dark .cert-card,
-.dark .experience-card,
-.dark .skill-card {
-  background-color: #1e293b !important;
-}
-
-/* Text adjustments */
-.dark h1,
-.dark h2,
-.dark h3,
-.dark p,
-.dark span,
-.dark li {
-  color: #e5e7eb !important;
-}
-
-
-/* Global mobile fixes */
-* {
-  box-sizing: border-box;
-}
-
-body {
-  overflow-x: hidden; /* prevent horizontal scroll */
+  --bg-main: #0f172a;       /* Slate 900 */
+  --bg-secondary: #1e293b;  /* Slate 800 */
+  --text-main: #f8fafc;     /* Slate 50 */
+  --text-muted: #94a3b8;    /* Slate 400 */
+  --border-color: #334155;  /* Slate 700 */
+  --card-bg: #1e293b;
+  --shadow: 0 10px 25px rgba(0,0,0,0.4);
+  --shadow-hover: 0 15px 35px rgba(0,0,0,0.6);
+  --glass-bg: rgba(15, 23, 42, 0.85);
+  --glass-border: rgba(255, 255, 255, 0.05);
+  
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  min-height: 100vh;
 }
 
 img {
   max-width: 100%;
   height: auto;
+}
+
+section {
+  padding: 6rem 2rem;
+  background-color: var(--bg-main);
+  transition: background-color 0.3s ease;
+}
+
+/* Section Headings */
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  position: relative;
+  color: var(--text-main);
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background-color: var(--primary);
+  border-radius: 2px;
+}
+
+/* Typography Base */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-main);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+p, span, li {
+  color: var(--text-muted);
 }
